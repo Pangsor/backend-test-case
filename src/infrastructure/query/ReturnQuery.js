@@ -6,7 +6,7 @@ import { dateNow } from "../../helper/ConvertDate.js";
 export const findAll = async(req, res) =>{
     try {
         const query = `SELECT 
-                        r.date,r.memberCode,r.bookCode,r.stock ,
+                        r.date,r.memberCode,r.bookCode,
                         m.name AS memberName,b.title,b.author
                         FROM return_book r LEFT JOIN member m
                         ON r.memberCode = m.code
