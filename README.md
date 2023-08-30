@@ -60,3 +60,27 @@ for(let i in matrix){
 }
 result = num1 - num2;
 console.log(result);
+
+
+# Collection Postman
+Get all member
+curl --location 'http://localhost:5000/api/v1/member'
+
+Create a member
+curl --location 'http://localhost:5000/api/v1/member' \
+--header 'Content-Type: application/json' \
+--data '{
+    "code":"M003",
+    "name":"Putri"
+}'
+
+Delete a member
+curl --location --request DELETE 'http://localhost:5000/api/v1/member/m004'
+
+Update a member
+curl --location --request PUT 'http://localhost:5000/api/v1/member' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name":"Fulan"
+}'
+
