@@ -20,8 +20,7 @@ export const createMember = async(req, res) =>{
         }).required();
         if (schema.validate(req.body).error) {
             return res.status(400).json({
-                message:schema.validate(req.body).error.message,
-                data:[]
+                message:schema.validate(req.body).error.message
             });
         }
 

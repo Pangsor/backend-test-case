@@ -37,7 +37,7 @@ export const persistBorrowBook = async(req, res) =>{
         const qUpdateStock = `UPDATE book SET stock = '0' WHERE code = '${bookCode}'`
         await db.query(qUpdateStock, { type: QueryTypes.UPDATE });
 
-        const qUpdateMember = `UPDATE member SET count_book = count_book + '1' WHERE code = '${memberCode}'`
+        const qUpdateMember = `UPDATE member SET count_book = count_book + '1', is_penalty = 'FALSE' WHERE code = '${memberCode}'`
         await db.query(qUpdateMember, { type: QueryTypes.UPDATE });
 
         const response ={

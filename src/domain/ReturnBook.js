@@ -2,23 +2,21 @@ import {Sequelize} from "sequelize";
 import db from "../config/Database.js";
  
 const {DataTypes} = Sequelize;
-const BorrowBook = db.define('borrow_book',{
+const ReturnBook = db.define('return_book',{
     id: {
         type: Sequelize.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey : true
     },
     date: DataTypes.DATEONLY,
-    dueDate: DataTypes.DATEONLY,
     memberCode: Sequelize.STRING,
     bookCode: Sequelize.STRING,
-    stock: { type: Sequelize.INTEGER, defaultValue:0 },
-    status: { type: Sequelize.STRING, defaultValue:"OPEN" }
+    borrowBookId: Sequelize.STRING
 },{
     freezeTableName:true
 });
  
-export default BorrowBook;
+export default ReturnBook;
  
 (async()=>{
     await db.sync();
