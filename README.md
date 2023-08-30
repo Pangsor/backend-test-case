@@ -61,6 +61,7 @@ for(let i in matrix){
 result = num1 - num2;
 console.log(result);
 
+=======================================================================
 
 # Collection Postman
 Get all member
@@ -84,3 +85,53 @@ curl --location --request PUT 'http://localhost:5000/api/v1/member' \
     "name":"Fulan"
 }'
 
+=======================================================================
+
+Get all book<br>
+curl --location 'http://localhost:5000/api/v1/book'
+
+Create a book<br>
+curl --location 'http://localhost:5000/api/v1/book' \
+--header 'Content-Type: application/json' \
+--data '{
+    "code":"JK-47",
+    "title":"Dimana Potter",
+    "author":"Author47"
+}'
+
+Delete a book<br>
+curl --location --request DELETE 'http://localhost:5000/api/v1/book/JK-46'
+
+Update a book<br>
+curl --location --request PUT 'http://localhost:5000/api/v1/book/JK-46' \
+--header 'Content-Type: application/json' \
+--data '{
+    "title":"Es Potter",
+    "author":"Author462"
+}'
+
+=======================================================================
+Get all borrow book<br>
+curl --location 'http://localhost:5000/api/v1/borrow'
+
+Create a boorow book<br>
+curl --location 'http://localhost:5000/api/v1/borrow' \
+--header 'Content-Type: application/json' \
+--data '{
+    "memberCode":"M001",
+    "bookCode":"JK-46"
+}'
+
+
+=======================================================================
+
+Get all return book<br>
+curl --location 'http://localhost:5000/api/v1/return'
+
+Create a return book<br>
+curl --location 'http://localhost:5000/api/v1/return' \
+--header 'Content-Type: application/json' \
+--data '{
+    "memberCode":"M001",
+    "bookCode":"JK-46"
+}'
