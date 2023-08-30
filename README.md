@@ -66,7 +66,7 @@ console.log(result);
 Get all member
 curl --location 'http://localhost:5000/api/v1/member'
 
-Create a member
+Create a member<br>
 curl --location 'http://localhost:5000/api/v1/member' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -74,10 +74,10 @@ curl --location 'http://localhost:5000/api/v1/member' \
     "name":"Putri"
 }'
 
-Delete a member
+Delete a member<br>
 curl --location --request DELETE 'http://localhost:5000/api/v1/member/m004'
 
-Update a member
+Update a member<br>
 curl --location --request PUT 'http://localhost:5000/api/v1/member' \
 --header 'Content-Type: application/json' \
 --data '{
